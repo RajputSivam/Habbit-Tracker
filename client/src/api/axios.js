@@ -3,8 +3,9 @@ import { TOKEN_STORAGE_KEY } from "./authStorage.js";
 
 const api = axios.create({
   baseURL: `${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api`,
-  "Content-Type": "application/json",
-},
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
 
 api.interceptors.request.use((config) => {
